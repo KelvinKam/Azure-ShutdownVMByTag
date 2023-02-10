@@ -24,7 +24,7 @@ catch {
 }
 
 $ShutdownVMs = Get-AzResource -ResourceType Microsoft.Compute/virtualMachines | Select-Object Name,ResourceGroupName,@{Label="Tags-AutoShutdown";Expression={$_.Tags["AutoShutdown"]}} | Where-Object Tags-Autoshutdown -ne "False"
-$ShutdownVMs = $ShutdownVMs | Get-AzVM -status | Select-Object Name,ResourceGroupName,@{Label="Status";Expression={$_.Statuses[1].DisplayStatus}} | Where-Object {($_.Status -ne "VM deallocated") -or ($_.Status -ne "VM deallocating")}
+$ShutdownVMs = $ShutdownVMs | Get-AzVM -status | Select-Object Name,ResourceGroupName,@{Label="Status";Expression={$_.Statuses[1].DisplayStatus}} | Where-Object {($_.Status -ne "VM deallocated") -and ($_.Status -ne "VM deallocating")}
 Write-Output "Shutdown virtual machines summary:`n "$ShutdownVMs.Name" `n"
 
 Foreach ($ShutdownVM in $ShutdownVMs){

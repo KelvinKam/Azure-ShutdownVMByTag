@@ -1,8 +1,11 @@
 # Azure-ShutdownVMByTag
 Shutdown Azure virtual machine by tags
 
-Usage
+<p>Usage<br>
 Copy to Azure Automation Account
 
-Requirement
+<p>Requirement<br>
 Managed Identity
+
+<p>Important<br>
+AutoShutdown in tag is case sensitive!!!

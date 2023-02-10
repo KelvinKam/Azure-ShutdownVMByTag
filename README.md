@@ -1,5 +1,5 @@
 # Azure-ShutdownVMByTag
-Shutdown Azure virtual machine by tags
+Shutdown all Azure virtual machine by tags, unless there is a tag named "AutoShutdown" value is "False"
 
 <p>Usage<br>
 Copy to Azure Automation Account

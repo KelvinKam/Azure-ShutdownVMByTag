@@ -9,7 +9,6 @@ try
     Write-Output $AzureContext.Subscription
 	# Set and store context
 	$AzureContext = Set-AzContext -Subscription $AzureContext.Subscription -DefaultProfile $AzureContext
-    #$AzureContext = Set-AzContext -Subscription "70e4e58a-b715-4463-8e6e-88c427e3e99e" -DefaultProfile $AzureContext
     "Logged in."
 }
 catch {
